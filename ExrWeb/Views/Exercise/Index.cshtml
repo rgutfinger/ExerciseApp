@@ -1,7 +1,60 @@
-﻿
+﻿@model ExrWeb.Models.Exercise
+
 @{
     ViewBag.Title = "Exercise";
 }
 
 <h2>Exercise</h2>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/app")
+}
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("Add", "Exercise", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group">
+        <label>Machine</label>
+        @Html.TextBoxFor(m => m.Machine, new { @class = "form-control" })
+    </div>
+        <div class="form-group">
+            <label>#Reps</label>
+            @Html.TextBoxFor(m => m.NumReps, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Date</label>
+            @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Add" />
+        </div>
+}
+
+<br />
+
+<table class="table table-hover table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Machine</th>
+            <th>#reps</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Shoulder Press</td>
+            <td>10</td>
+            <td>10/20/2018</td>
+        </tr>
+        <tr>
+            <td>Shoulder Press</td>
+            <td>10</td>
+            <td>10/20/2018</td>
+        </tr>
+    </tbody>
+</table>
+
+
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExrWeb.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,23 @@ namespace ExrWeb.Controllers
 {
     public class ExerciseController : Controller
     {
-        // GET: Exercise
-        public ActionResult Index()
+		static List<Exercise> m_elist = new List<Exercise>();
+
+		// GET: Exercise
+		public ActionResult Index()
         {
-            return View();
+            return View(new Exercise());
         }
-    }
+
+		public ActionResult Add(Exercise model)
+		{
+			ViewBag.Title = "Exercise";
+
+			//this.ModelState.
+
+			m_elist.Add(model);
+
+			return View("Index", model);
+		}
+	}
 }
