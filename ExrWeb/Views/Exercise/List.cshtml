@@ -6,16 +6,25 @@
 }
 
 <h2>Exercise List</h2>
-<table>
-
-    @foreach (Exercise ex in Model)
-    {
+<table class="table table-hover table-bordered table-striped">
+    <thead>
         <tr>
-            <td>@ex.Machine</td>
-            <td>@ex.NumReps</td>
+            <th>Machine</th>
+            <th>#reps</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (Exercise ex in Model)
+        {
+            <tr>
+                <td>@ex.Machine</td>
+                <td>@ex.NumReps</td>
             <td>@ex.ExDate</td>
         </tr>
-    }
+        }
 
+        </tbody>
 </table>
-
