@@ -31,14 +31,17 @@
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe,new { accessKey = "R"} )
-                            @Html.LabelFor(m => m.RememberMe, new { title = "Test Tooltip" })
+                            @Html.CheckBoxFor(m => m.RememberMe,
+                                    new { accessKey = "R"} )
+                            @Html.LabelFor(m => m.RememberMe, 
+                                    new { title = "Test Tooltip" })
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" accesskey="L" />
+                        <input type="submit" value="Log in" class="btn btn-default" 
+                               accesskey="L" />
                     </div>
                 </div>
                 <p>
