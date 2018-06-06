@@ -27,5 +27,12 @@ namespace ExrWeb.Controllers
 
 			return View("Index", model);
 		}
+
+		public ActionResult List()
+		{
+			return View(m_elist);
+		}
+
+
 	}
 }
