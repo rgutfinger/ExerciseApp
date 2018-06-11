@@ -11,7 +11,8 @@
     @Scripts.Render("~/bundles/app")
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
+<h2>@ViewBag.Error</h2>
 
 @using (Html.BeginForm("Add", "Exercise", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
@@ -28,7 +29,7 @@
             @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            <input type="submit" value="Add" />
+            <input type="submit" value="Add" accesskey="A" title="[Alt+A]" />
         </div>
 }
 

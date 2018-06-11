@@ -17,15 +17,33 @@ namespace ExrWeb.Controllers
             return View(new Exercise());
         }
 
+		[HttpPost]
 		public ActionResult Add(Exercise model)
 		{
 			ViewBag.Title = "Exercise";
 
-			//this.ModelState.
+			//next --   but iisExpress doesn't debug 
+			// ***turn off JScript dbg
+			// update to vs15.3 and above
+			// or set breakpoint in code
+			// usee localhost (=iis?) but can't security refs top dir...
 
-			m_elist.Add(model);
+			if (string.IsNullOrWhiteSpace(model.Machine))
+				ModelState.AddModelError("Machine", "Machine name missing");
+			if ( model.NumReps<=0 )
+				ModelState.AddModelError("NumReps", "NumReps must be positive");
 
-			return View("Index", model);
+			if (ModelState.IsValid)
+			{
+				m_elist.Add(model);
+
+				return View("Index", model);
+			}
+			else
+			{
+				ViewBag.Error = "Invalid args";
+				return View("Index", null);
+			}
 		}
 
 		public ActionResult List()
