@@ -13,7 +13,12 @@
 
 <script>
   $( function() {
-    $( "#ExDate" ).datepicker();
+      $("#ExDate").datepicker({
+          changeMonth: true,
+          changeYear: true,
+          minDate: -20,
+          maxDate: "+1M +5D"
+      });
   } 
    );
 </script>
