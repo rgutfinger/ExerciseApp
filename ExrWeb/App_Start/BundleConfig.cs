@@ -13,6 +13,12 @@ namespace ExrWeb
 			bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
 				"~/Scripts/jquery-{version}.js"));
 
+
+				bundles.Add(new ScriptBundle("~/bundles/jquery-ui").Include(
+					"~/Scripts/jquery-ui.js"));
+
+
+
 			bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
 				"~/Scripts/jquery.unobtrusive*",
 				"~/Scripts/jquery.validate*"));
@@ -40,6 +46,7 @@ namespace ExrWeb
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 				 "~/Content/bootstrap.css",
+						"~/Content/jquery-ui.css",
 				 "~/Content/Site.css"));
 		}
 	}

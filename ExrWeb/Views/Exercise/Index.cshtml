@@ -1,13 +1,23 @@
 ﻿@model ExrWeb.Models.Exercise
 
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Exercise";
 }
 
 @section Scripts{
     @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/app")
+
+        @Scripts.Render("~/bundles/jquery")
 }
+
+<script>
+  $( function() {
+    $( "#ExDate" ).datepicker();
+  } 
+   );
+</script>
 
 <h2>@ViewBag.Title</h2>
 
@@ -21,17 +31,17 @@
     <div class="form-group">
         <label>Machine</label>
         @Html.TextBoxFor(m => m.Machine, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Machine);
+        @Html.ValidationMessageFor(m => m.Machine)
     </div>
     <div class="form-group">
         <label>#Reps</label>
         @Html.TextBoxFor(m => m.NumReps, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.NumReps);
+        @Html.ValidationMessageFor(m => m.NumReps)
     </div>
     <div class="form-group">
         <label>Date</label>
         @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.ExDate);
+        @Html.ValidationMessageFor(m => m.ExDate)
     </div>
     <div class="form-group">
         <input type="submit" value="Add" accesskey="A" title="[Alt+A]"
