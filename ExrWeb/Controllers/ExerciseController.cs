@@ -32,6 +32,8 @@ namespace ExrWeb.Controllers
 				ModelState.AddModelError("Machine", "Machine name missing");
 			if ( model.NumReps<=0 )
 				ModelState.AddModelError("NumReps", "NumReps must be positive");
+			if ( model.ExDate<=DateTime.MinValue)
+				ModelState.AddModelError("ExDate", "Invalid date");
 
 			if (ModelState.IsValid)
 			{
