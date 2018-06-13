@@ -35,6 +35,7 @@
                 <td>@ex.Machine</td>
                 <td>@ex.NumReps</td>
                 <td>@ex.ExDate</td>
+                <td>@Html.ActionLink("Delete","Delete",new { machine = ex.Machine })</td>
             </tr>
         }
 

@@ -52,7 +52,14 @@ namespace ExrWeb.Controllers
 		{
 			return View(m_elist);
 		}
+		
+		public ActionResult Delete(string machine)
+		{
+			Exercise ex = m_elist.Find(e => e.Machine.Equals(machine, StringComparison.InvariantCultureIgnoreCase));
+			m_elist.Remove(ex);
 
+			return View("List",m_elist);
+		}
 
 	}
 }
