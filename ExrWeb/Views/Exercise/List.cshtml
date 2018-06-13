@@ -17,14 +17,26 @@
     <tbody>
 
 
+        @{string cls; }
         @foreach (Exercise ex in Model)
         {
-            <tr>
+            {
+                if (ex.NumReps > 5)
+                {
+                    cls = "success";
+                }
+                else
+                {
+                    cls = "alert-info";
+                }
+            }
+
+            <tr class=@cls>
                 <td>@ex.Machine</td>
                 <td>@ex.NumReps</td>
-            <td>@ex.ExDate</td>
-        </tr>
+                <td>@ex.ExDate</td>
+            </tr>
         }
 
-        </tbody>
+    </tbody>
 </table>
