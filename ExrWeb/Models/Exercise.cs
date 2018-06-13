@@ -8,10 +8,12 @@ namespace ExrWeb.Models
 {
 	public class Exercise
 	{
-		[Required(ErrorMessage ="Invalid")]
+		[Required(ErrorMessage ="Invalid machine")]
 		public string Machine { get; set; }
-		[Required]
+
+		[Required(ErrorMessage = "Invalid # reps")]
 		public int NumReps { get; set; }
+
 		[Required]
 		public DateTime ExDate { get; set; }
 	}

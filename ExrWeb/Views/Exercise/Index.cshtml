@@ -10,22 +10,29 @@
 }
 
 <h2>@ViewBag.Title</h2>
+
 <h2 style="color:red">@ViewBag.Error</h2>
+
 
 @using (Html.BeginForm("Add", "Exercise", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
+    @Html.ValidationSummary()
+
     <div class="form-group">
         <label>Machine</label>
         @Html.TextBoxFor(m => m.Machine, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Machine);
     </div>
-        <div class="form-group">
-            <label>#Reps</label>
-            @Html.TextBoxFor(m => m.NumReps, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <label>Date</label>
-            @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control" })
-        </div>
+    <div class="form-group">
+        <label>#Reps</label>
+        @Html.TextBoxFor(m => m.NumReps, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NumReps);
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ExDate);
+    </div>
         <div class="form-group">
             <input type="submit" value="Add" accesskey="A" title="[Alt+A]"
                    class="btn btn-primary"/>
