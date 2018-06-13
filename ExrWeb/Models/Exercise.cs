@@ -9,14 +9,14 @@ namespace ExrWeb.Models
 	public class Exercise
 	{
 		//[Required(ErrorMessage ="Invalid machine")]
-		[Required]
+		//[Required]
 		public string Machine { get; set; }
 
 		//[Required(ErrorMessage = "Invalid # reps")]
-		[Required]
+		//[Required]
 		public int NumReps { get; set; }
 
-		[Required]
+		//[Required]
 		public DateTime ExDate { get; set; }
 	}
 }
