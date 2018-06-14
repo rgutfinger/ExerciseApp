@@ -1,0 +1,61 @@
+﻿@model ExrWeb.Models.Exercise
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Exercise";
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/app")
+
+}
+
+<script>
+  $( function() {
+      $("#ExDate").datepicker({
+          changeMonth: true,
+          changeYear: true,
+          minDate: -20,
+          maxDate: "+1M +5D"
+      });
+  } 
+   );
+</script>
+
+<h2>Edit</h2>
+
+<h2 style="color:red">@ViewBag.Error</h2>
+
+
+@using (Html.BeginForm("Edit", "Exercise", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <!--@Html.ValidationSummary() -->
+
+    <div class="form-group">
+        <label>Machine</label>
+        @Html.TextBoxFor(m => m.Machine, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Machine)
+    </div>
+    <div class="form-group">
+        <label>#Reps</label>
+        @Html.TextBoxFor(m => m.NumReps, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NumReps)
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ExDate)
+    </div>
+    <div class="form-group">
+        <input type="button" value="Cancel" accesskey="C" title="[Alt+C]"
+               class="btn btn-primary" />
+        <input type="submit" value="Edit" accesskey="E" title="[Alt+E]"
+               class="btn btn-primary" />
+    </div>
+}
+
+<br />
+
+
+

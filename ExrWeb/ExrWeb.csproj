@@ -352,6 +352,7 @@
     </Content>
     <Content Include="Views\Exercise\Index.cshtml" />
     <Content Include="Views\Exercise\List.cshtml" />
+    <Content Include="Views\Exercise\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
