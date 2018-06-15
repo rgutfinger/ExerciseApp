@@ -32,11 +32,12 @@
 {
     <!--@Html.ValidationSummary() -->
 
-    <div class="form-group">
-        <label>Machine</label>
-        @Html.TextBoxFor(m => m.Machine, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Machine)
-    </div>
+<div class="form-group">
+    <label>Machine</label>
+    @Html.DropDownListFor(m => m.Machine, ViewBag.MachineList as MultiSelectList)
+    <!-- Html.TextBoxFor(m => m.Machine, new { class = "form-control" })-->
+    @Html.ValidationMessageFor(m => m.Machine)
+</div>
     <div class="form-group">
         <label>#Reps</label>
         @Html.TextBoxFor(m => m.NumReps, new { @class = "form-control" })

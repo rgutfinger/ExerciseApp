@@ -11,9 +11,21 @@ namespace ExrWeb.Controllers
 	{
 		static List<Exercise> m_elist = new List<Exercise>();
 
+		MultiSelectList GetMachines(string[] selectedValues)
+		{
+
+			List<string> machines = new List<string>(
+				new string[] { "bicep", "tricep", "chest" });
+			
+			return new MultiSelectList(machines, selectedValues);
+
+		}
+
 		// GET: Exercise
 		public ActionResult Index()
 		{
+			ViewBag.MachineList = GetMachines(new string[] { "bicep" });
+
 			return View(new Exercise());
 		}
 
@@ -21,6 +33,9 @@ namespace ExrWeb.Controllers
 		public ActionResult Add(Exercise model)
 		{
 			ViewBag.Title = "Exercise";
+
+			ViewBag.MachineList = GetMachines(new string[] { "bicep" });
+
 
 			//next --   but iisExpress doesn't debug 
 			// ***turn off JScript dbg
