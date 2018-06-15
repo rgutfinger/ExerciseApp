@@ -34,7 +34,7 @@
 
 <div class="form-group">
     <label>Machine</label>
-    @Html.DropDownListFor(m => m.Machine, ViewBag.MachineList as MultiSelectList)
+    @Html.DropDownListFor(m => m.Machine, ViewBag.MachineList as MultiSelectList, new { @class = "form-control" })
     <!-- Html.TextBoxFor(m => m.Machine, new { class = "form-control" })-->
     @Html.ValidationMessageFor(m => m.Machine)
 </div>
