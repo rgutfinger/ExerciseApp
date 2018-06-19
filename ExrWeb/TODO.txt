@@ -1,1 +1,2 @@
-﻿dropDown for machine(s)
+﻿match rows for edit - not by machine..need id...
+[done] dropDown for machine(s)
