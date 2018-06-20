@@ -5,7 +5,13 @@
     ViewBag.Title = "List";
 }
 
-<h2>Exercise List</h2>
+<h2 style="font-style:italic">Exercise List</h2>
+
+<label># exercises</label>
+@Html.TextBoxFor(m => m.Count, new { style="Width:80px;background-color:whiteSmoke",  @readonly = "readonly", Title = "Count" })
+
+<br />
+<br />
 
 <table class="table table-hover table-bordered table-striped">
     <thead>
@@ -33,14 +39,14 @@
                 }
             }
 
-        <tr class=@cls>
-            <td>@ex.ID</td>
-            <td>@ex.Machine</td>
-            <td>@ex.NumReps</td>
-            <td>@ex.ExDate</td>
-            <td>@Html.ActionLink("Delete", "Delete", new { id = ex.ID })</td>
-            <td>@Html.ActionLink("Edit", "Edit", new { id = ex.ID })</td>
-        </tr>
+            <tr class=@cls>
+                <td>@ex.ID</td>
+                <td>@ex.Machine</td>
+                <td>@ex.NumReps</td>
+                <td>@ex.ExDate</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = ex.ID })</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { id = ex.ID })</td>
+            </tr>
         }
 
     </tbody>
