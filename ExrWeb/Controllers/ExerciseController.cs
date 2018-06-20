@@ -68,9 +68,9 @@ namespace ExrWeb.Controllers
 			return View(m_elist);
 		}
 
-		public ActionResult Delete(string machine)
+		public ActionResult Delete(int id)
 		{
-			Exercise ex = m_elist.Find(e => e.Machine.Equals(machine, StringComparison.InvariantCultureIgnoreCase));
+			Exercise ex = m_elist.Find(e => e.ID==id);
 			m_elist.Remove(ex);
 
 			return View("List", m_elist);
@@ -82,6 +82,9 @@ namespace ExrWeb.Controllers
 			//m_elist.Remove(ex);
 
 			//return View("Edit", ex);
+
+			ViewBag.MachineList = GetMachines(new string[] { "bicep" });
+
 			return View("Edit", ex);
 		}
 

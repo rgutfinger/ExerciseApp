@@ -10,6 +10,7 @@
 <table class="table table-hover table-bordered table-striped">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Machine</th>
             <th>#reps</th>
             <th>Date</th>
@@ -33,11 +34,12 @@
             }
 
         <tr class=@cls>
+            <td>@ex.ID</td>
             <td>@ex.Machine</td>
             <td>@ex.NumReps</td>
             <td>@ex.ExDate</td>
-            <td>@Html.ActionLink("Delete", "Delete", new { machine = ex.Machine })</td>
-            <td>@Html.ActionLink("Edit", "Edit", new { machine = ex.Machine })</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = ex.ID })</td>
+            <td>@Html.ActionLink("Edit", "Edit", new { id = ex.ID })</td>
         </tr>
         }
 
