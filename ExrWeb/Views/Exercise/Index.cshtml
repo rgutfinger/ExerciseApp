@@ -34,12 +34,13 @@
 <div class="form-group">
     <div class="form-group">
         <label>ID</label>
-        @Html.TextBoxFor(m => m.ID, new { @class = "form-control", @readonly= "readonly" })
+        @Html.TextBoxFor(m => m.ID, new { @class = "form-control", @readonly= "readonly", Title="Internal Identifier" })
         @Html.ValidationMessageFor(m => m.ID, "", new { @class = "text-danger", style = "background-color:yellow" })
     </div>
     <div class="form-group">
         <label>Machine</label>
-        @Html.DropDownListFor(m => m.Machine, ViewBag.MachineList as MultiSelectList, new { @class = "form-control form-control-lg" })
+        @Html.DropDownListFor(m => m.Machine, ViewBag.MachineList as MultiSelectList, 
+            new { @class = "form-control form-control-lg", Title="Select Machine Type" })
         <!-- Html.TextBoxFor(m => m.Machine, new { class = "form-control" })-->
         @Html.ValidationMessageFor(m => m.Machine)
     </div>
