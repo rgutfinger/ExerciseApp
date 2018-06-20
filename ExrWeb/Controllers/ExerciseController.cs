@@ -16,7 +16,9 @@ namespace ExrWeb.Controllers
 
 			List<string> machines = new List<string>(
 				new string[] { "bicep", "tricep", "chest" });
-			
+
+			machines.Sort();
+
 			return new MultiSelectList(machines, selectedValues);
 
 		}
