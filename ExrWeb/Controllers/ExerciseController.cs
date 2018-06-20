@@ -44,8 +44,6 @@ namespace ExrWeb.Controllers
 			// update to vs15.3 and above
 			// or set breakpoint in code
 			// usee localhost (=iis?) but can't security refs top dir...
-			if (model.ID<=0)
-				ModelState.AddModelError("ID", "ID must be positive");
 			if (string.IsNullOrWhiteSpace(model.Machine))
 				ModelState.AddModelError("Machine", "Machine name missing");
 			if (model.NumReps <= 0)
@@ -55,6 +53,8 @@ namespace ExrWeb.Controllers
 
 			if (ModelState.IsValid)
 			{
+				model.SetID();
+
 				m_elist.Add(model);
 
 				return View("Index", model);

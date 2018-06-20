@@ -10,7 +10,7 @@ namespace ExrWeb.Models
 	{
 		static int s_id = 0;
 
-		public Exercise()
+		public void SetID()
 		{
 			s_id++;
 			ID = s_id;
