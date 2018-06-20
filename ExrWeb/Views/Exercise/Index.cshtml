@@ -45,12 +45,12 @@
     </div>
     <div class="form-group">
         <label>#Reps</label>
-        @Html.TextBoxFor(m => m.NumReps, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.NumReps, new { @class = "form-control" ,Title="# of Repetitions" })
         @Html.ValidationMessageFor(m => m.NumReps, "", new { @class = "text-danger", style = "background-color:yellow" })
     </div>
     <div class="form-group">
         <label>Date</label>
-        @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control", Title="Date of Exercise" })
         @Html.ValidationMessageFor(m => m.ExDate, "", new { @class = "text-danger" })
 
     </div>
