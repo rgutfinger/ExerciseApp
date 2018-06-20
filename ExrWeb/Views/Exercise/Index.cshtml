@@ -27,7 +27,6 @@
 
 <h2 style="color:red">@ViewBag.Error</h2>
 
-
 @using (Html.BeginForm("Add", "Exercise", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     <!--@Html.ValidationSummary() -->
@@ -35,7 +34,7 @@
 <div class="form-group">
     <div class="form-group">
         <label>ID</label>
-        @Html.TextBoxFor(m => m.ID, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.ID, new { @class = "form-control", @readonly= "readonly" })
         @Html.ValidationMessageFor(m => m.ID, "", new { @class = "text-danger", style = "background-color:yellow" })
     </div>
     <div class="form-group">
