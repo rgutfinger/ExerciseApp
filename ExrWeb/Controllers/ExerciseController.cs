@@ -42,7 +42,8 @@ namespace ExrWeb.Controllers
 			// update to vs15.3 and above
 			// or set breakpoint in code
 			// usee localhost (=iis?) but can't security refs top dir...
-
+			if (model.ID<=0)
+				ModelState.AddModelError("ID", "ID must be positive");
 			if (string.IsNullOrWhiteSpace(model.Machine))
 				ModelState.AddModelError("Machine", "Machine name missing");
 			if (model.NumReps <= 0)
@@ -76,9 +77,9 @@ namespace ExrWeb.Controllers
 			return View("List", m_elist);
 		}
 
-		public ActionResult Edit(string machine)
+		public ActionResult Edit(int id)
 		{
-			Exercise ex = m_elist.Find(e => e.Machine.Equals(machine, StringComparison.InvariantCultureIgnoreCase));
+			Exercise ex = m_elist.Find(e => e.ID == id);
 			//m_elist.Remove(ex);
 
 			//return View("Edit", ex);
