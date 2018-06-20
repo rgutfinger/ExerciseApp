@@ -44,8 +44,10 @@
                 <td>@ex.Machine</td>
                 <td>@ex.NumReps</td>
                 <td>@ex.ExDate</td>
-                <td>@Html.ActionLink("Delete", "Delete", new { id = ex.ID })</td>
-                <td>@Html.ActionLink("Edit", "Edit", new { id = ex.ID })</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = ex.ID },
+                   new {Title= "Delete Exercise" })</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { id = ex.ID }, 
+                   new { Title = "Edit Exercise" })</td>
             </tr>
         }
 
