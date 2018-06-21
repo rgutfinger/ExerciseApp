@@ -39,8 +39,6 @@ namespace ExrWeb.Controllers
 			ViewBag.MachineList = GetMachines(new string[] { "bicep" });
 			ViewBag.IsEditMode = false;
 
-			ModelState.Clear(); // IMPORTANT: without this model values are cached in view (and ID remains 0)
-
 			//next --   but iisExpress doesn't debug 
 			// ***turn off JScript dbg
 			// update to vs15.3 and above
@@ -64,6 +62,8 @@ namespace ExrWeb.Controllers
 
 		void ValidateModel(Exercise model)
 		{
+			ModelState.Clear(); // IMPORTANT: without this model values are cached in view (and ID remains 0)
+
 			if (string.IsNullOrWhiteSpace(model.Machine))
 				ModelState.AddModelError("Machine", "Machine name missing");
 			if (model.NumReps <= 0)
@@ -94,6 +94,7 @@ namespace ExrWeb.Controllers
 
 			//return View("Edit", ex);
 
+			ViewBag.Title = "Edit";
 			ViewBag.MachineList = GetMachines(new string[] { ex.Machine });
 			ViewBag.IsEditMode = true;
 
@@ -115,6 +116,7 @@ namespace ExrWeb.Controllers
 			}
 			else
 			{
+				ViewBag.Title = "Edit";
 				ViewBag.MachineList = GetMachines(new string[] { model.Machine });
 				ViewBag.IsEditMode = true;
 				return View("Edit", model);
