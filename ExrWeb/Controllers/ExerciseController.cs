@@ -88,7 +88,7 @@ namespace ExrWeb.Controllers
 
 			//return View("Edit", ex);
 
-			ViewBag.MachineList = GetMachines(new string[] { "bicep" });
+			ViewBag.MachineList = GetMachines(new string[] { ex.Machine });
 			ViewBag.IsEditMode = true;
 
 			return View("Edit", ex);
@@ -98,6 +98,7 @@ namespace ExrWeb.Controllers
 		public ActionResult Edit(Exercise model)
 		{
 			Exercise ex = m_elist.Find(e => e.ID == model.ID);
+			ex.Machine = model.Machine;
 			ex.NumReps = model.NumReps;
 			ex.ExDate = model.ExDate;
 

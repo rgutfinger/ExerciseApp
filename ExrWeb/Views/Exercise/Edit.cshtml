@@ -28,15 +28,7 @@
 <h2 style="color:red">@ViewBag.Error</h2>
 
 
-@using (Html.BeginForm("Edit", "Exercise", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    <!--@Html.ValidationSummary() -->
-
-<div class="form-group">
     @Html.Partial("props", Model)
-
-</div>
-    }
 
     <br />
 

@@ -1,38 +1,57 @@
 ﻿@model ExrWeb.Models.Exercise
-<div class="form-group">
-    <label>ID</label>
-    @Html.TextBoxFor(m => m.ID, new { @readonly = "readonly", @class = "form-control", Title = "Internal Identifier" })
-</div>
-<div class="form-group">
-    <label>Machine</label>
-    @Html.DropDownListFor(m => m.Machine, ViewBag.MachineList as MultiSelectList,
-        new { @class = "form-control form-control-lg", Title="Select Machine Type" })
-    <!-- Html.TextBoxFor(m => m.Machine, new { class = "form-control" })-->
-    @Html.ValidationMessageFor(m => m.Machine)
-</div>
-<div class="form-group">
-    <label>#Reps</label>
-    @Html.TextBoxFor(m => m.NumReps, new { @class = "form-control", Title = "# of Repetitions" })
-    @Html.ValidationMessageFor(m => m.NumReps, "", new { @class = "text-danger", style = "background-color:yellow" })
-</div>
-<div class="form-group">
-    <label>Date</label>
-    @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control", Title = "Date of Exercise" })
-    @Html.ValidationMessageFor(m => m.ExDate, "", new { @class = "text-danger" })
-</div>
 
-@if (ViewBag.IsEditMode != null && ViewBag.IsEditMode)
-{
-    <div class="form-group">
-        @Html.ActionLink("Cancel", "List", "Exercise", new { @class = "btn btn-primary", accesskey ="C", Title="[Alt+C]" })
-        <input type="submit" value="Edit" accesskey="I" title="[Alt+I]"
-               class="btn btn-primary" />
-    </div>
-}
-else
-{
-    <div class="form-group">
-        <input type="submit" value="Add" accesskey="A" title="[Alt+A]"
-               class="btn btn-primary" />
-    </div>
-}
+@{string operation;
+    if (ViewBag.IsEditMode != null && ViewBag.IsEditMode)
+        {
+            operation = "Edit";
+        }
+        else
+        {
+            operation = "Add";
+        }
+    }
+
+    @using (Html.BeginForm(operation, "Exercise", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <!--@Html.ValidationSummary() -->
+
+        <div class="form-group">
+            <div class="form-group">
+                <label>ID</label>
+                @Html.TextBoxFor(m => m.ID, new { @readonly = "readonly", @class = "form-control", Title = "Internal Identifier" })
+            </div>
+            <div class="form-group">
+                <label>Machine</label>
+                @Html.DropDownListFor(m => m.Machine, ViewBag.MachineList as MultiSelectList,
+                    new { @class = "form-control form-control-lg", Title="Select Machine Type" })
+                <!-- Html.TextBoxFor(m => m.Machine, new { class = "form-control" })-->
+                @Html.ValidationMessageFor(m => m.Machine)
+            </div>
+            <div class="form-group">
+                <label>#Reps</label>
+                @Html.TextBoxFor(m => m.NumReps, new { @class = "form-control", Title = "# of Repetitions" })
+                @Html.ValidationMessageFor(m => m.NumReps, "", new { @class = "text-danger", style = "background-color:yellow" })
+            </div>
+            <div class="form-group">
+                <label>Date</label>
+                @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control", Title = "Date of Exercise" })
+                @Html.ValidationMessageFor(m => m.ExDate, "", new { @class = "text-danger" })
+            </div>
+
+            @if (ViewBag.IsEditMode != null && ViewBag.IsEditMode)
+            {
+                <div class="form-group">
+                    @Html.ActionLink("Cancel", "List", "Exercise", new { @class = "btn btn-primary", accesskey = "C", Title = "[Alt+C]" })
+                    <input type="submit" value="Edit" accesskey="I" title="[Alt+I]"
+                           class="btn btn-primary" />
+                </div>
+            }
+            else
+            {
+                <div class="form-group">
+                    <input type="submit" value="Add" accesskey="A" title="[Alt+A]"
+                           class="btn btn-primary" />
+                </div>
+            }
+        </div>
+    }
