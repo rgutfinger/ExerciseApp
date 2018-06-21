@@ -1,15 +1,15 @@
 ﻿@model ExrWeb.Models.Exercise
 
 <script>
-  $( function() {
-      $("#ExDate").datepicker({
-          changeMonth: true,
-          changeYear: true,
-          minDate: -20,
-          maxDate: "+1M +5D"
-      });
-  }
-   );
+    $(function () {
+        $("#ExDate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            minDate: -20,
+            maxDate: "+1M +5D"
+        });
+    }
+    );
 </script>
 
 @{string operation;
@@ -22,6 +22,9 @@
         operation = "Add";
     }
 }
+
+<h2 style="color:red">@ViewBag.Error</h2>
+
 
 @using (Html.BeginForm(operation, "Exercise", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {

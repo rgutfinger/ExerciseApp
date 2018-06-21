@@ -46,13 +46,8 @@ namespace ExrWeb.Controllers
 			// update to vs15.3 and above
 			// or set breakpoint in code
 			// usee localhost (=iis?) but can't security refs top dir...
-			if (string.IsNullOrWhiteSpace(model.Machine))
-				ModelState.AddModelError("Machine", "Machine name missing");
-			if (model.NumReps <= 0)
-				ModelState.AddModelError("NumReps", "NumReps must be positive");
-			if (model.ExDate <= new DateTime(2018, 1, 1))
-				ModelState.AddModelError("ExDate", "Invalid date");
 
+			ValidateModel(model);
 			if (ModelState.IsValid)
 			{
 				model.SetID();
@@ -63,9 +58,20 @@ namespace ExrWeb.Controllers
 			}
 			else
 			{
-				ViewBag.Error = "Invalid args";
 				return View("Index", null);
 			}
+		}
+
+		void ValidateModel(Exercise model)
+		{
+			if (string.IsNullOrWhiteSpace(model.Machine))
+				ModelState.AddModelError("Machine", "Machine name missing");
+			if (model.NumReps <= 0)
+				ModelState.AddModelError("NumReps", "NumReps must be positive");
+			if (model.ExDate <= new DateTime(2018, 1, 1))
+				ModelState.AddModelError("ExDate", "Invalid date");
+			if (!ModelState.IsValid)
+				ViewBag.Error = "Invalid args";
 		}
 
 		public ActionResult List()
@@ -97,12 +103,22 @@ namespace ExrWeb.Controllers
 		[HttpPost]
 		public ActionResult Edit(Exercise model)
 		{
-			Exercise ex = m_elist.Find(e => e.ID == model.ID);
-			ex.Machine = model.Machine;
-			ex.NumReps = model.NumReps;
-			ex.ExDate = model.ExDate;
+			ValidateModel(model);
+			if (ModelState.IsValid)
+			{
+				Exercise ex = m_elist.Find(e => e.ID == model.ID);
+				ex.Machine = model.Machine;
+				ex.NumReps = model.NumReps;
+				ex.ExDate = model.ExDate;
 
-			return View("List", m_elist);
+				return View("List", m_elist);
+			}
+			else
+			{
+				ViewBag.MachineList = GetMachines(new string[] { model.Machine });
+				ViewBag.IsEditMode = true;
+				return View("Edit", model);
+			}
 		}
 	}
 }

@@ -44,10 +44,10 @@
                 <td>@ex.Machine</td>
                 <td>@ex.NumReps</td>
                 <td>@ex.ExDate</td>
-                <td>@Html.ActionLink("Delete", "Delete", new { id = ex.ID },
-                   new {Title= "Delete Exercise" })</td>
-                <td>@Html.ActionLink("Edit", "Edit", new { id = ex.ID }, 
-                   new { Title = "Edit Exercise" })</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = ex.ID},
+                   new {Accesskey = "T", Title = "Delete Exercise [Alt+T]" })</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { id = ex.ID},
+                   new { Accesskey = "I", Title = "Edit Exercise [Alt+I]" })</td>
             </tr>
         }
 
