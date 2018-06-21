@@ -96,7 +96,7 @@ namespace ExrWeb.Controllers
 		[HttpPost]
 		public ActionResult Edit(Exercise model)
 		{
-			Exercise ex = m_elist.Find(e => e.Machine.Equals(model.Machine, StringComparison.InvariantCultureIgnoreCase));
+			Exercise ex = m_elist.Find(e => e.ID == model.ID);
 			ex.NumReps = model.NumReps;
 			ex.ExDate = model.ExDate;
 

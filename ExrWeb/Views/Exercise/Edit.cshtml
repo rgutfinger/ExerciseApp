@@ -33,27 +33,8 @@
     <!--@Html.ValidationSummary() -->
 
 <div class="form-group">
-    <div class="form-group">
-        <label>ID</label>
-        @Html.TextBoxFor(m => m.ID, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.ID, "", new { @class = "text-danger", style = "background-color:yellow" })
-    </div>
-    <div class="form-group">
-        <label>Machine</label>
-        @Html.DropDownListFor(m => m.Machine, ViewBag.MachineList as MultiSelectList, new { @class = "form-control form-control-lg" })
-        <!-- Html.TextBoxFor(m => m.Machine, new { class = "form-control" })-->
-        @Html.ValidationMessageFor(m => m.Machine)
-    </div>
-    <div class="form-group">
-        <label>#Reps</label>
-        @Html.TextBoxFor(m => m.NumReps, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.NumReps)
-    </div>
-    <div class="form-group">
-        <label>Date</label>
-        @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.ExDate)
-    </div>
+    @Html.Partial("props", Model)
+
     <div class="form-group">
         @Html.ActionLink("Cancel", "List", "Exercise", new { @class = "btn btn-primary" })
         <input type="submit" value="Edit" accesskey="I" title="[Alt+I]"
