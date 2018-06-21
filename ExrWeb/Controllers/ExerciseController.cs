@@ -37,7 +37,7 @@ namespace ExrWeb.Controllers
 			ViewBag.Title = "Exercise";
 
 			ViewBag.MachineList = GetMachines(new string[] { "bicep" });
-
+			ViewBag.IsEditMode = false;
 
 			ModelState.Clear(); // IMPORTANT: without this model values are cached in view (and ID remains 0)
 
@@ -89,6 +89,7 @@ namespace ExrWeb.Controllers
 			//return View("Edit", ex);
 
 			ViewBag.MachineList = GetMachines(new string[] { "bicep" });
+			ViewBag.IsEditMode = true;
 
 			return View("Edit", ex);
 		}

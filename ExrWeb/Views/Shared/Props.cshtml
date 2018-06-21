@@ -1,5 +1,5 @@
-﻿@model ExrWeb.Models.Exercise 
- <div class="form-group">
+﻿@model ExrWeb.Models.Exercise
+<div class="form-group">
     <label>ID</label>
     @Html.TextBoxFor(m => m.ID, new { @readonly = "readonly", @class = "form-control", Title = "Internal Identifier" })
 </div>
@@ -20,3 +20,19 @@
     @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control", Title = "Date of Exercise" })
     @Html.ValidationMessageFor(m => m.ExDate, "", new { @class = "text-danger" })
 </div>
+
+@if (ViewBag.IsEditMode != null && ViewBag.IsEditMode)
+{
+    <div class="form-group">
+        @Html.ActionLink("Cancel", "List", "Exercise", new { @class = "btn btn-primary", accesskey ="C", Title="[Alt+C]" })
+        <input type="submit" value="Edit" accesskey="I" title="[Alt+I]"
+               class="btn btn-primary" />
+    </div>
+}
+else
+{
+    <div class="form-group">
+        <input type="submit" value="Add" accesskey="A" title="[Alt+A]"
+               class="btn btn-primary" />
+    </div>
+}
