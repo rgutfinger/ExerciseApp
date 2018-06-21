@@ -39,6 +39,8 @@ namespace ExrWeb.Controllers
 			ViewBag.MachineList = GetMachines(new string[] { "bicep" });
 
 
+			ModelState.Clear(); // IMPORTANT: without this model values are cached in view (and ID remains 0)
+
 			//next --   but iisExpress doesn't debug 
 			// ***turn off JScript dbg
 			// update to vs15.3 and above

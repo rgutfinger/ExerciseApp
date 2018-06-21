@@ -30,11 +30,11 @@
 @using (Html.BeginForm("Add", "Exercise", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     <!--@Html.ValidationSummary() -->
-
+    
 <div class="form-group">
     <div class="form-group">
         <label>ID</label>
-        @Html.TextBoxFor(m => m.ID, new { @class = "form-control", @readonly= "readonly", Title="Internal Identifier" })
+        @Html.TextBoxFor(m => m.ID, new { @readonly = "readonly", @class = "form-control", Title="Internal Identifier" })
     </div>
     <div class="form-group">
         <label>Machine</label>
