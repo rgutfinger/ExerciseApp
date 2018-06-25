@@ -39,17 +39,27 @@
                 }
             }
 
+            <!-- class = "btn btn-success"-->
+
             <tr class=@cls>
                 <td>@ex.ID</td>
                 <td>@ex.Machine</td>
                 <td>@ex.NumReps</td>
                 <td>@ex.ExDate</td>
-                <td>@Html.ActionLink("Delete", "Delete", new { id = ex.ID},
-                   new {Accesskey = "T", Title = "Delete Exercise [Alt+T]" })</td>
-                <td>@Html.ActionLink("Edit", "Edit", new { id = ex.ID},
-                   new { Accesskey = "I", Title = "Edit Exercise [Alt+I]" })</td>
-            </tr>
-        }
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = ex.ID},
+               new {Accesskey = "T", Title = "Delete Exercise [Alt+T]",
+                   @style = "background:url('../../Images/delete.png') no-repeat center right; display:block; height: 20px; width: 60px"
+               })
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = ex.ID},
+           new { Accesskey = "I", Title = "Edit Exercise [Alt+I]" ,
+               @style = "background:url('../../Images/edit.png') no-repeat center right; display:block; height: 20px; width: 43px"
+           })
+        </td>
+    </tr>
+}
 
     </tbody>
 </table>
