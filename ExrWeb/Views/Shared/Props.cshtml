@@ -52,7 +52,11 @@
         </div>
         <div class="form-group">
             <label>Date</label>
-            @Html.TextBoxFor(m => m.ExDate, new { @class = "form-control", Title = "Date of Exercise" })
+            @Html.TextBoxFor(m => m.ExDate, "{0:MM-dd-yyyy}", new { @class = "form-control", Title = "Date of Exercise" })
+
+
+
+
             @Html.ValidationMessageFor(m => m.ExDate, "", new { @class = "text-danger" })
         </div>
 
