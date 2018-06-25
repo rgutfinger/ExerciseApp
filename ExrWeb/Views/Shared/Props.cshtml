@@ -11,10 +11,16 @@
         });
 
 
-        $("#NumReps").spinner({
+        /*$("#NumReps").spinner({
             min: 0,
-            max: 100
-        });
+            max: 100,
+            classes: {
+                "ui-spinner": "highlight",
+                "ui-spinner": "ui-corner-all",
+                "ui-spinner-down": "ui-corner-br",
+                "ui-spinner-up": "ui-corner-tr"
+            }            
+        });*/
     }
     );
 </script>
@@ -55,7 +61,7 @@
         <div class="form-group">
             <label>#Reps</label>
             <br />
-            @Html.TextBoxFor(m => m.NumReps, new { @class = "form-control", Title = "# of Repetitions" ,
+            @Html.TextBoxFor(m => m.NumReps, new { Type="number", min=1, max=50,  @class = "form-control", Title = "# of Repetitions" ,
                 style ="width:120px"})
             @Html.ValidationMessageFor(m => m.NumReps, "", new { @class = "text-danger", style = "background-color:yellow" })
         </div>
