@@ -45,7 +45,7 @@
                 <td>@ex.ID</td>
                 <td>@ex.Machine</td>
                 <td>@ex.NumReps</td>
-                <td>@ex.ExDate</td>
+                <td>@String.Format("{0:MM-dd-yyyy}",ex.ExDate)</td>
                 <td>
                     @Html.ActionLink("Delete", "Delete", new { id = ex.ID},
                new {Accesskey = "T", Title = "Delete Exercise [Alt+T]",
