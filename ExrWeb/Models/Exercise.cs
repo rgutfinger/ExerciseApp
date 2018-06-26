@@ -10,6 +10,12 @@ namespace ExrWeb.Models
 	{
 		static int s_id = 0;
 
+		public Exercise()
+		{
+			NumReps = 1;
+			ExDate = DateTime.Today;
+		}
+
 		public void SetID()
 		{
 			s_id++;
