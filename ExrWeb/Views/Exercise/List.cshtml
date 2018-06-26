@@ -49,13 +49,15 @@
                 <td width="80px">
                     @Html.ActionLink("Delete", "Delete", new { id = ex.ID},
                new {Accesskey = "T", Title = "Delete Exercise [Alt+T]",
-                   @style = "background:url('../../Images/delete.png') no-repeat center right; display:block; height: 20px; width: 60px"
+                   @style = "background:url('../../Images/delete.png') no-repeat center right; display:block; height: 20px; width: 60px",
+                   onclick = "return confirm('Do you really want to delete object ID " + ex.ID + "?')"
                })
             </td>
             <td width="65px">
                 @Html.ActionLink("Edit", "Edit", new { id = ex.ID},
            new { Accesskey = "I", Title = "Edit Exercise [Alt+I]" ,
                @style = "background:url('../../Images/edit.png') no-repeat center right; display:block; height: 20px; width: 43px"
+               //onclick="alert('Edit')"
            })
         </td>
     </tr>
