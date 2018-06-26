@@ -15,7 +15,7 @@ namespace ExrWeb.Controllers
 		{
 
 			List<string> machines = new List<string>(
-				new string[] { "bicep", "tricep", "chest" });
+				new string[] { "Bicep", "Chest", "Tricep", "Legs", "Abs" });
 
 			machines.Sort();
 
@@ -26,7 +26,7 @@ namespace ExrWeb.Controllers
 		// GET: Exercise
 		public ActionResult Index()
 		{
-			ViewBag.MachineList = GetMachines(new string[] { "bicep" });
+			ViewBag.MachineList = GetMachines(new string[] { "Bicep" });
 
 			return View(new Exercise());
 		}
@@ -36,7 +36,7 @@ namespace ExrWeb.Controllers
 		{
 			ViewBag.Title = "Exercise";
 
-			ViewBag.MachineList = GetMachines(new string[] { "bicep" });
+			ViewBag.MachineList = GetMachines(new string[] { "Bicep" });
 			ViewBag.IsEditMode = false;
 
 			//next --   but iisExpress doesn't debug 

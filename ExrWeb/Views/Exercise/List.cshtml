@@ -46,13 +46,13 @@
                 <td>@ex.Machine</td>
                 <td>@ex.NumReps</td>
                 <td>@String.Format("{0:MM-dd-yyyy}",ex.ExDate)</td>
-                <td>
+                <td width="80px">
                     @Html.ActionLink("Delete", "Delete", new { id = ex.ID},
                new {Accesskey = "T", Title = "Delete Exercise [Alt+T]",
                    @style = "background:url('../../Images/delete.png') no-repeat center right; display:block; height: 20px; width: 60px"
                })
             </td>
-            <td>
+            <td width="65px">
                 @Html.ActionLink("Edit", "Edit", new { id = ex.ID},
            new { Accesskey = "I", Title = "Edit Exercise [Alt+I]" ,
                @style = "background:url('../../Images/edit.png') no-repeat center right; display:block; height: 20px; width: 43px"
