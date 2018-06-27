@@ -1,0 +1,8 @@
+﻿.button-img-edit {
+    background-image: url('../../Content/Images/edit.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: right;
+    /*height: 20px; */
+    width: 70px
+}
