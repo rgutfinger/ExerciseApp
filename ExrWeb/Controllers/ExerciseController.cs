@@ -52,7 +52,7 @@ namespace ExrWeb.Controllers
 
 				m_elist.Add(model);
 
-				return View("Index", model);
+				return View("List", m_elist);
 			}
 			else
 			{
@@ -77,6 +77,14 @@ namespace ExrWeb.Controllers
 		public ActionResult List()
 		{
 			return View(m_elist);
+		}
+
+		public ActionResult Add()
+		{
+			Exercise ex = new Exercise();
+			ViewBag.MachineList = GetMachines(new string[] { ex.Machine });
+
+			return View("Index", ex);
 		}
 
 		public ActionResult Delete(int id)
