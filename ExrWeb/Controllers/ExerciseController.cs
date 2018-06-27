@@ -79,6 +79,11 @@ namespace ExrWeb.Controllers
 			return View(m_elist);
 		}
 
+		public ActionResult LowFilter()
+		{
+			return View("List",m_elist.Where(x=>x.NumReps<5).ToList());
+		}
+
 		public ActionResult Add()
 		{
 			Exercise ex = new Exercise();
