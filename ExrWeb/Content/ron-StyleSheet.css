@@ -6,3 +6,21 @@
     /*height: 20px; */
     width: 70px
 }
+
+.button-img-cancel {
+    background-image: url('../../Content/Images/delete.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: right;
+    /*height: 20px; */
+    width: 85px
+}
+
+.button-img-add {
+    background-image: url('../../Content/Images/Add.png');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: right;
+    /*height: 20px; */
+    width: 72px
+}

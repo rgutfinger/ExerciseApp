@@ -78,7 +78,7 @@
         @if (ViewBag.IsEditMode != null && ViewBag.IsEditMode)
         {
         <div class="form-group">
-            @Html.ActionLink("Cancel", "List", "Exercise", new { @class = "btn btn-primary", accesskey = "C", Title = "[Alt+C]" })
+            @Html.ActionLink("Cancel", "List", "Exercise", new { @class = "btn btn-primary button-img-cancel", accesskey = "C", Title = "[Alt+C]" })
             
          <input type="submit" value="Edit" accesskey="I" title="[Alt+I]"
                 class="btn btn-primary button-img-edit" />
@@ -88,7 +88,7 @@
         {
             <div class="form-group">
                 <input type="submit" value="Add" accesskey="A" title="[Alt+A]"
-                       class="btn btn-primary" />
+                       class="btn btn-primary button-img-add" />
             </div>
         }
     </div>
