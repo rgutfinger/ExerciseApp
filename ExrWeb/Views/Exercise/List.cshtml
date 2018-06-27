@@ -34,11 +34,14 @@ style="margin-left:50px"}
         @foreach (Exercise ex in Model)
         {
             {
-                if (ex.NumReps > 5)
+                if (ex.NumReps >= 10)
                 {
                     cls = "alert-success";
                 }
-                else
+                else if (ex.NumReps >= 5)
+                {
+                    cls = "alert-warning";
+                }else
                 {
                     cls = "alert-danger";
                 }
