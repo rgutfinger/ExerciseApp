@@ -55,7 +55,7 @@ style="margin-left:50px"}
                     @Html.ActionLink("Delete", "Delete", new { id = ex.ID},
                new {Accesskey = "T", Title = "Delete Exercise [Alt+T]",
                    @style = "background:url('../../Content/Images/delete.png') no-repeat center right; display:block; height: 20px; width: 60px",
-                   onclick = "return confirm('Do you really want to delete object ID " + ex.ID + "?')"
+                   onclick = "return confirm('Are you sure about deleting exercise # " + ex.ID + "?')"
                })
                 </td>
                 <td width="65px">
