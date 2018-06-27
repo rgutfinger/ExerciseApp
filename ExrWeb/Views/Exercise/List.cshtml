@@ -10,7 +10,9 @@
 <label># exercises</label>
 @Html.TextBoxFor(m => m.Count, new { style = "Width:80px;background-color:whiteSmoke", @readonly = "readonly", Title = "Count" })
 
-@Html.ActionLink("Add", "Add", "Exercise", new { @class = "btn btn-primary button-img-add", accesskey = "A", Title = "[Alt+A]" })
+@Html.ActionLink("Add", "Add", "Exercise", new { @class = "btn btn-primary button-img-add", accesskey = "A", Title = "[Alt+A]",
+style="margin-left:50px"}
+)
 
 
 <br />

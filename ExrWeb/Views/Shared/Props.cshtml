@@ -77,7 +77,9 @@
 
     <!-- next shift to right..space.. -->
     <div class="form-group">
-        @Html.ActionLink("Cancel", "List", "Exercise", new { @class = "btn btn-primary button-img-cancel", accesskey = "C", Title = "[Alt+C]" })
+        @Html.ActionLink("Cancel", "List", "Exercise", new { @class = "btn btn-primary button-img-cancel", accesskey = "C", Title = "[Alt+C]",
+            style = "margin-left:50px"
+            })
 
         @if (ViewBag.IsEditMode != null && ViewBag.IsEditMode)
         {
