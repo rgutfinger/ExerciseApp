@@ -88,11 +88,13 @@ namespace ExrWeb.Controllers
 			{
 				elist = m_elist.Where(x => x.NumReps < 5).ToList();
 				m_isFiltered = true;
+				ViewBag.Filtered = true;
 			}
 			else
 			{
 				elist = m_elist;
 				m_isFiltered = false;
+				ViewBag.Filtered = false;
 			}
 
 			return View("List",elist);
