@@ -79,9 +79,23 @@ namespace ExrWeb.Controllers
 			return View(m_elist);
 		}
 
+		static bool m_isFiltered = false; //later viewbag...
+
 		public ActionResult LowFilter()
 		{
-			return View("List",m_elist.Where(x=>x.NumReps<5).ToList());
+			List<Exercise> elist;
+			if (!m_isFiltered)
+			{
+				elist = m_elist.Where(x => x.NumReps < 5).ToList();
+				m_isFiltered = true;
+			}
+			else
+			{
+				elist = m_elist;
+				m_isFiltered = false;
+			}
+
+			return View("List",elist);
 		}
 
 		public ActionResult Add()
