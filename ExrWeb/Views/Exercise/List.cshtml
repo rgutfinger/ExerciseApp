@@ -17,13 +17,13 @@
 <!-- *****next toggle button or ckbox... -->
 @{string clsBtn;}
 @{if (ViewBag.Filtered!=null && ViewBag.Filtered)
-{
-clsBtn="btn btn-primary button-img-add navbar-toggle";
-}
-else
-{
-clsBtn="btn btn-primary button-img-add";
-}
+    {
+        clsBtn= "btn btn-primary button-img-filter";
+    }
+    else
+    {
+        clsBtn= "btn btn-primary button-img-filter_off";
+    }
 }
 
 @Html.ActionLink("Low", "LowFilter", "Exercise", new { @class = clsBtn, accesskey = "L", Title = "[Alt+L]" })

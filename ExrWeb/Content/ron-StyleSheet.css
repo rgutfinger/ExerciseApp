@@ -24,3 +24,23 @@
     /*height: 20px; */
     width: 72px
 }
+
+.button-img-filter_off {
+    background-image: url('../../Content/Images/Filter.png');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: right;
+    border:solid;
+    /*height: 20px; */
+    width: 92px
+}
+
+.button-img-filter {
+    background-image: url('../../Content/Images/Filter.png');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: right;
+    /*height: 20px; */
+    width: 92px
+}
+
