@@ -30,11 +30,11 @@
                 <ul class="nav navbar-nav">
                     <li>
                         @Html.ActionLink("Exercise", "Index", "Exercise", new { area = "" },
-                   new { accessKey = "X", title="[Alt+X]" } )
+new { accessKey = "X", title = "[Alt+X]" })
                 </li>
                 <li>
                     @Html.ActionLink("List Ex", "List", "Exercise", new { area = "" },
-                   new { accessKey = "L", title = "[Alt+L]" })
+    new { accessKey = "L", title = "[Alt+L]" })
                 </li>
                 <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
                 </ul>
@@ -46,7 +46,12 @@
         @RenderBody()
         @RenderSection("SPAViews", required: false)
         <hr />
+
+        @{TempData.Keep("NumEdits");}
+        
+
         <footer>
+            <p>#Edits = @TempData["NumEdits"]</p>
             <p>&copy; @DateTime.Now.Year - Ron's ASP.NET Application</p>
         </footer>
     </div>

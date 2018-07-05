@@ -28,6 +28,8 @@ namespace ExrWeb.Controllers
 		{
 			ViewBag.MachineList = GetMachines(new string[] { "Bicep" });
 
+			TempData["NumEdits"] = 0;
+
 			return View(new Exercise());
 		}
 
@@ -118,6 +120,15 @@ namespace ExrWeb.Controllers
 
 		public ActionResult Edit(int id)
 		{
+			object obj=TempData["NumEdits"];
+			int num = 0;
+			if (obj == null)
+				num = 0;
+			else
+				num = (int)obj;
+			num++;
+			TempData["NumEdits"]=num;
+
 			Exercise ex = m_elist.Find(e => e.ID == id);
 			//m_elist.Remove(ex);
 
